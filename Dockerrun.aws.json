@@ -2,28 +2,31 @@
   "AWSEBDockerrunVersion": 2,
   "containerDefinitions": [
       {
-          "Name": "clientt",
+          "name": "client",
           "image": "chaudhary1993/muti-client",
           "hostname": "client",
-          "essential": "false"
+          "essential": "false",
+          "memory": 128
       },
 
       {
-        "Name": "serverr",
+        "name": "server",
         "image": "chaudhary1993/muti-server",
         "hostname": "api",
-        "essential": "false"
+        "essential": "false",
+        "memory": 128
       },
 
       {
-        "Name": "workerr",
+        "name": "worker",
         "image": "chaudhary1993/muti-worker",
         "hostname": "worker",
-        "essential": "false"
+        "essential": "false",
+        "memory": 128
       },
 
       {
-        "Name": "nginx",
+        "name": "nginx",
         "image": "chaudhary1993/muti-nginx",
         "essential": "true",
         "portMappings":[
@@ -32,7 +35,8 @@
                 "containerPort": 80
             }
         ],
-        "links": ["clientt", "serverr"]
+        "links": ["clientt", "serverr"],
+        "memory": 128
       }
 
   ]
