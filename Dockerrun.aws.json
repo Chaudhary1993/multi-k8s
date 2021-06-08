@@ -2,21 +2,21 @@
   "AWSEBDockerrunVersion": 2,
   "containerDefinitions": [
       {
-          "Name": "client",
+          "Name": "clientt",
           "image": "chaudhary1993/muti-client",
           "hostname": "client",
           "essential": "false"
       },
 
       {
-        "Name": "server",
+        "Name": "serverr",
         "image": "chaudhary1993/muti-server",
         "hostname": "api",
         "essential": "false"
       },
 
       {
-        "Name": "worker",
+        "Name": "workerr",
         "image": "chaudhary1993/muti-worker",
         "hostname": "worker",
         "essential": "false"
@@ -32,7 +32,7 @@
                 "containerPort": 80
             }
         ],
-        "links": ["client", "server"]
+        "links": ["clientt", "serverr"]
       }
 
   ]
