@@ -10,7 +10,7 @@ spec:
   rules:
     - http:
         paths:
-          - path: /?(.*)
+          - path: /notaccessable
             pathType: Prefix
             backend:
               service:
